@@ -1,23 +1,32 @@
-# Physics-Constrained Transformer for Multi-Step Pitch Response Prediction
+# PISF
 
-This repository contains the core training code for a physics-constrained Transformer-based sequence prediction framework. The model is designed for multi-step pitch response forecasting under varying structural parameters and flow conditions.
+PISF is a physics-informed sequence forecasting framework developed for structural response prediction in stall flutter.  
+Its primary objective is multi-step pitch angle prediction under varying structural parameters and flow conditions.
 
 ## Overview
 
-The framework integrates data-driven sequence modeling with physics-based residual constraints. It supports dataset construction, model training, inference, and physics-consistency evaluation for pitch response prediction tasks.
+This repository provides the core implementation of a physics-informed Transformer-based framework for structural response forecasting.  
+By integrating sequence learning with physics-based residual constraints, the method aims to enhance both predictive accuracy and physical consistency.
 
 ## Current Contents
 
-- Physics-constrained Transformer training script
+- Core training code for the physics-informed Transformer
 - Sequence dataset construction
-- Multi-step prediction and inference
-- Physics-residual-based evaluation
+- Multi-step pitch angle prediction
+- Inference and evaluation functions
+- Physics-residual-based analysis
+
+## Research Scope
+
+The current implementation focuses on pitch angle response prediction in stall flutter problems.  
+It is intended for studying unsteady aeroelastic structural responses across different flow velocities and structural parameter configurations.
 
 ## Notes
 
 Additional codes, experiment scripts, and related modules are still being organized and uploaded.  
-This repository will be updated continuously as the remaining components are prepared.
+This repository will be continuously updated as the remaining components are prepared.
 
 ## Status
 
-This project is currently under active development. More files and documentation will be added in future updates.
+This project is under active development.  
+More files and documentation will be added in future updates.
