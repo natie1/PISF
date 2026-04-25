@@ -1,20 +1,26 @@
 # PISF
 
-PISF is a stall flutter prediction framework consisting of two coupled modules: a large-model-fine-tuning-based aerodynamic prediction model and a physics-constrained structural response prediction model.
+PISF is a prediction framework for stall flutter analysis, consisting of two coupled modules: a large-model-fine-tuning-based aerodynamic prediction module and a physics-constrained structural response prediction module.
 
 ## Overview
 
-This repository presents the core implementation of the PISF framework for stall flutter analysis under limited-data conditions. The framework is developed to improve both prediction accuracy and physical consistency in aeroelastic response prediction.
+This repository presents the core implementation of the PISF framework for stall flutter prediction under limited-data conditions. The framework is developed to improve both predictive accuracy and physical consistency in aeroelastic response analysis.
 
 The overall framework contains two main modules:
 
 ### 1. Aerodynamic Prediction Module
 
-This module is developed based on fine-tuning large models for time-series prediction. It is used to predict the instantaneous aerodynamic moment in stall flutter, which provides the aerodynamic input required for the physics-constrained structural response model.
+This module is developed based on fine-tuning large models for time-series prediction.  
+It takes historical pitch-angle sequences and flow velocity as inputs, and outputs the instantaneous aerodynamic moment coefficient.
+
+The predicted aerodynamic moment is further used in the structural response module to construct physics-based constraints through the structural dynamic equation.
 
 ### 2. Structural Response Prediction Module
 
-This module is developed for structural response prediction in stall flutter, with a particular focus on multi-step pitch angle forecasting. During training, the predicted instantaneous aerodynamic moment from the aerodynamic module is introduced into the structural dynamic equation to construct physics-based constraints, thereby improving the physical consistency and prediction performance of structural response forecasting.
+This module is developed for structural response prediction in stall flutter.  
+It takes historical pitch-angle sequences, flow velocity, and structural parameters \((K, C, I)\) as inputs, and outputs future multi-step structural responses.
+
+By integrating data-driven sequence modeling with physics-based residual constraints, this module is designed to improve both prediction accuracy and physical consistency under varying structural parameters and flow conditions.
 
 ## Current Contents
 
@@ -25,7 +31,8 @@ This module is developed for structural response prediction in stall flutter, wi
 
 ## Research Scope
 
-The current framework focuses on stall flutter prediction for aeroelastic systems. In particular, the present implementation emphasizes structural response forecasting, especially pitch angle prediction under different flow velocities and structural parameter settings.
+The current framework focuses on stall flutter prediction for aeroelastic systems.  
+In particular, the aerodynamic module is used to estimate the instantaneous aerodynamic moment coefficient, while the structural response module is used to predict future pitch-angle responses under different flow velocities and structural parameter settings.
 
 ## Notes
 
